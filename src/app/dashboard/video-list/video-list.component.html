@@ -2,7 +2,7 @@
   <div class="video-list__list">
     <h2>Video List</h2>
     <ul class="">
-      <li *ngFor="let video of videos"
+      <li *ngFor="let video of videos | async"
           (click)="select(video)"
           [class.selected]="isSelected(video)"
           class="video-list__list-item">

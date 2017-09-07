@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Http, Response } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 
+import { VideoDataService } from '../../video-data.service';
 import { Video } from '../interfaces';
 
 @Component({
@@ -13,12 +15,10 @@ export class VideoListComponent implements OnInit {
   @Input() selectedVideo: Video;
   @Output() selectVideo = new EventEmitter<Video>();
   
-  videos: Video[];
+  videos: Observable<Video[]>;
 
-  constructor (http: Http) { 
-    http
-      .get("/api/videos")
-      .subscribe((res: Response) => this.videos = res.json());
+  constructor (videoService: VideoDataService) { 
+    this.videos = videoService.loadVideos();
   }
 
   ngOnInit() {
