@@ -3,23 +3,14 @@
     <h2>Video List</h2>
     <ul class="">
       <li *ngFor="let video of videos"
-          class="video-list__list-item"
-          [class.selected]="isSelected(video)">
-        <app-video-list-item (click)="selectVideo(video)"
-                             
-                             [video]="video">
+          (click)="select(video)"
+          [class.selected]="isSelected(video)"
+          class="video-list__list-item">
+        <app-video-list-item [video]="video">
         </app-video-list-item>
-      </li>
-      <li>
-        <button (click)="unselectAll()">Unselect All</button>
       </li>
     </ul>
   </div>
 
-  <div *ngIf="selectedVideo" class="video-list__selected-video">
-      <h3>Selected Video</h3>
-      <h4>{{ selectedVideo.title }}</h4>
-  </div>
-  
   <div style="clear:both"></div>
 </div>

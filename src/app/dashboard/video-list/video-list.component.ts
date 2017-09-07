@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-video-list',
@@ -170,22 +170,21 @@ export class VideoListComponent implements OnInit {
     }
   ];
   
-  selectedVideo: object = undefined;
-
+  oldSelectedVideo: object = undefined;
+  
+  @Input() selectedVideo;
+  @Output() selectVideo = new EventEmitter<Object>();
+  
   constructor() { }
 
   ngOnInit() {
   }
 
-  selectVideo(video) {
-    this.selectedVideo = video;
+  select(video) {
+    this.selectVideo.emit(video);
   }
   
   isSelected(video) {
     return (this.selectedVideo === video);
-  }
-  
-  unselectAll() {
-    this.selectedVideo = null;
   }
 }
