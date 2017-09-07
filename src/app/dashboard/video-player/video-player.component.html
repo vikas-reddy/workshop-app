@@ -1,2 +1,7 @@
 <h2>Video Player</h2>
-<h3> {{ video.title }} </h3>
+<div class="video-player" *ngIf="video">
+  <h3> {{ video.title }} </h3>
+</div>
+<div class="video-player" *ngIf="!video">
+    No Video selected
+</div>

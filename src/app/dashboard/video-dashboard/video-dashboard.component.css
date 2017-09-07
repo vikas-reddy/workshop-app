@@ -1,0 +1,18 @@
+.video-dashboard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.video-dashboard__video-list {
+    width: 25%;
+}
+
+.video-dashboard__video-player {
+    width: 30%;
+}
+
+.video-dashboard__filters {
+    width: 30%;
+}

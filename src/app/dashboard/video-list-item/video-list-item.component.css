@@ -1,4 +1,6 @@
 .video-list-item__title {
     background: inherit;
     font-size: inherit;
+    width: 100%;
+    border: 1px solid #ccc;
 }
