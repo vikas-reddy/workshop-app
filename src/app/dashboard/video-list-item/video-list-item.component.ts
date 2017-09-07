@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Video } from '../interfaces';
 
 @Component({
   selector: 'app-video-list-item',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class VideoListItemComponent implements OnInit {
 
-  @Input() video: object;
+  @Input() video: Video;
   isSelected = false;
 
   constructor() { }

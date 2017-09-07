@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Video } from '../interfaces';
 
 @Component({
   selector: 'app-video-list',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class VideoListComponent implements OnInit {
 
-  videos = [
+  videos: Video[] = [
     {
       "title": "Angular Observable Data Flow",
       "author": "Kyle Cordes",
@@ -170,21 +171,21 @@ export class VideoListComponent implements OnInit {
     }
   ];
   
-  oldSelectedVideo: object = undefined;
+  oldSelectedVideo: Video = undefined;
   
-  @Input() selectedVideo;
-  @Output() selectVideo = new EventEmitter<Object>();
+  @Input() selectedVideo: Video;
+  @Output() selectVideo = new EventEmitter<Video>();
   
   constructor() { }
 
   ngOnInit() {
   }
 
-  select(video) {
+  select(video: Video) {
     this.selectVideo.emit(video);
   }
   
-  isSelected(video) {
+  isSelected(video: Video) {
     return (this.selectedVideo === video);
   }
 }
