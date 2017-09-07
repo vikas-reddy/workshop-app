@@ -16,8 +16,9 @@ export class VideoListComponent implements OnInit {
   videos: Video[];
 
   constructor (http: Http) { 
-    http.get("/api/videos")
-    .subscribe((res: Response) => this.videos = res.json());
+    http
+      .get("/api/videos")
+      .subscribe((res: Response) => this.videos = res.json());
   }
 
   ngOnInit() {

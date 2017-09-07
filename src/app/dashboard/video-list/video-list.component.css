@@ -4,7 +4,7 @@ ul, ol {
     margin: 0;
 }
 .selected {
-    background-color: green;
+    background-color: #ccc;
 }
 .video-list__list-item {
     margin-bottom: 10px;
