@@ -7,9 +7,16 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class VideoListItemComponent implements OnInit {
 
+  @Input() video: object;
+  isSelected = false;
+
   constructor() { }
 
   ngOnInit() {
-  } x
-
+  }
+  
+  selectVideo() {
+    this.isSelected = !this.isSelected;
+  }
+  
 }

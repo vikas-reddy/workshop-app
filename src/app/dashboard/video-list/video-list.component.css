@@ -1,0 +1,30 @@
+ul, ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.selected {
+    background-color: #eeeeee;
+}
+.video-list__list-item {
+    margin-bottom: 5px;
+    padding: 5px;
+
+}
+
+.video-list {
+    display: block;
+}
+.video-list__list {
+    float: left;
+    width: 60%;
+}
+.video-list__selected-video {
+    float: left;
+    width: 40%;
+}
+
+.video-list__list ul  {
+    background: inherit;
+    font-size: inherit;
+}
