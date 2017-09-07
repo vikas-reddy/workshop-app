@@ -1,3 +1,20 @@
-<h2>
-Stat Filters
-</h2>
+<div class="stat-filters">
+    <h2>Stat Filters</h2>
+    
+    <form [formGroup]="videoFg" (submit)="filterVideos()" class="stat-filters__form">
+        <div class="form-control"
+             [class.error]="videoFg.get('title').invalid && videoFg.get('title').dirty">
+            <label for="searchby-title">Title</label>
+            <input id="searchby-title" formControlName="title" type="text" />
+        </div>
+        <div class="form-control">
+            <label for="searchby-author">Author</label>
+            <input id="searchby-author" formControlName="author" type="text" />
+        </div>
+        <div class="form-control">
+            <button [disabled]="!videoFg.valid" [class.disabled]="!videoFg.valid">
+                Filter
+            </button>
+        </div>
+    </form>
+</div>
